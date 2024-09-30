@@ -1,0 +1,26 @@
+<div class="login-container">
+      <mat-card class="login-card">
+        <h1 style="color: #00acc1;">Bharat Bijili Corporation</h1>
+        <h1>Log In</h1>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <mat-form-field appearance="fill">
+            <input matInput placeholder="Enter employee email" formControlName="email" [readonly]="otpSent" required>
+            <mat-error *ngIf="loginForm.get('email')?.invalid">Please enter a valid email address.</mat-error>
+          </mat-form-field>
+          
+          <mat-form-field appearance="fill" *ngIf="otpSent">
+            <input matInput type="text" placeholder="Enter OTP" formControlName="otp" required>
+            <mat-error *ngIf="loginForm.get('otp')?.hasError('required') && loginForm.get('otp')?.touched">
+              Please enter the OTP.
+            </mat-error>
+            <mat-error *ngIf="loginForm.get('otp')?.hasError('pattern') && loginForm.get('otp')?.touched">
+              OTP must be a 6-digit number.
+            </mat-error>
+          </mat-form-field>
+          
+          <button mat-raised-button color="primary" type="submit" class="login-button" [disabled]="loginForm.invalid">
+            {{ otpSent ? 'Verify OTP' : 'Send OTP' }}
+          </button>
+        </form>
+      </mat-card>
+    </div>

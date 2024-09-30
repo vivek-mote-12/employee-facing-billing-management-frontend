@@ -1,0 +1,77 @@
+/* Center the form on the page */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: white; /* White background */
+}
+
+/* Style for the login card */
+.login-card {
+  padding: 30px;
+  width: 500px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+}
+
+/* Style for material form fields */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+/* Increase height of input fields */
+.input-field {
+  height: 80px; /* Increased input height */
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+input{
+  font-size: 25px !important;
+}
+
+/* Change the placeholder color to grey */
+::ng-deep input::placeholder {
+  color: rgba(0, 0, 0, 0.54) !important; /* Light grey placeholder */
+
+}
+
+/* Change input underline color */
+::ng-deep .mat-form-field-underline {
+  background-color: rgba(0, 0, 0, 0.42) !important; /* Light grey underline */
+}
+
+/* When input is focused, change underline color */
+::ng-deep .mat-form-field-underline .mat-form-field-ripple {
+  background-color: #00acc1 !important; /* Cyan underline on focus */
+}
+
+/* Button styling with cyan color */
+.login-button {
+  width: 100%;
+  padding: 25px;
+  background-color: #00acc1 !important; /* Cyan color */
+  color: white;
+  font-weight: bold;
+  font-size: 22px !important;
+  transition: background-color 0.3s, transform 0.2s;
+  border-radius: 10px;
+  font-size: large;
+}
+
+/* Hover effect for the button */
+.login-button:hover {
+  background-color: #00838f !important; /* Darker Cyan on hover */
+  transform: translateY(-2px); /* Slight hover effect */
+}
+
+/* Style for the title */
+h1 {
+  margin-bottom: 35px;
+  color: #004d40;
+  font-size: 30px;
+  font-weight: bold;
+}
