@@ -1,1 +1,32 @@
-<p>customer-list works!</p>
+<div class="customer-list-container">
+    <h3>Customers list</h3>
+    <table class="customer-list-table" *ngIf="customers$ | async as customers">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>City</th>
+                <th>Previous bill date</th>
+                <th>Address</th>
+                <th>View</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (customer of customers; track $index) {
+                <tr>
+                    <td>{{customer.name}}</td>
+                    <td>{{ customer.email }}</td>
+                    <td>{{ customer.mobile }} </td>
+                    <td>{{customer.city }}</td>
+                    <td>{{customer.previousBillDate}}</td>
+                    <td>{{customer.address }}</td>
+                    <td>
+                        <button class="open-btn">Open</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <p *ngIf="(customers$ | async) === null">Loading customers...</p>
+</div>

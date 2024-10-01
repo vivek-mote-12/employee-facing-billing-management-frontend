@@ -1,9 +1,169 @@
-.dashboard-container {
-    display: flex;
-    height: 100vh;
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9; /* Very light background */
+  color: #333; /* Dark text for readability */
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff; /* White background */
+  color: #333; /* Dark text */
+  padding: 15px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav_element {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav_element p {
+  margin: 0;
+  font-size: 30px; /* Larger font for company name */
+  font-weight: bold;
+  color: #00acc1;
+}
+
+/* Main Container Styles */
+.m {
+  display: flex;
+  flex-direction: row; /* Ensure sidebar and center are side by side */
+  height: calc(100vh - 60px); /* Adjust height to fill remaining screen */
+}
+
+/* Sidebar Styles */
+.sidebar {
+  background-color: white; /* White background */
+  width: 250px; /* Fixed width for sidebar */
+  padding: 20px;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Allow scrolling if content overflows */
+  border-radius: 10px;
+}
+
+.sidebar a {
+  color: #007bff; /* Bootstrap primary color */
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #e7f0ff; /* Light blue on hover */
+  color: #0056b3; /* Darker blue on hover */
+}
+
+/* Center Component Styles */
+.center {
+  flex: 1; /* Take the remaining space */
+  padding: 20px;
+  background-color: #ffffff; /* White background for content */
+  overflow-y: auto; /* Enable scrolling if content overflows */
+  border-left: 1px solid #dcdcdc; /* Subtle left border for separation */
+}
+
+/* List Item Styles */
+.list-item {
+  background-color: #f1f1f1; /* Light gray for list items */
+  border: 1px solid #dcdcdc; /* Soft gray border */
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px 0;
+  transition: background-color 0.3s;
+}
+
+.list-item:hover {
+  background-color: #e0e0e0; /* Slightly darker gray on hover */
+}
+
+/* Heading Styles */
+h3 {
+  color: #007bff; /* Bootstrap primary color for headings */
+  margin-bottom: 10px; /* Spacing below headings */
+}
+
+/* Transaction Table Styles */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px; /* Spacing above table */
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  border: 1px solid #dcdcdc; /* Border for table cells */
+  text-align: left;
+}
+
+.table th {
+  background-color: #007bff; /* Primary color for headers */
+  color: #ffffff; /* White text for headers */
+}
+
+.table td {
+  background-color: #ffffff; /* White background for data cells */
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .m {
+      flex-direction: column; /* Stack sidebar and center on smaller screens */
   }
-  .content {
-    flex-grow: 1;
-    padding: 20px;
-    overflow-y: auto;
+
+  .sidebar {
+      width: 100%; /* Full width for sidebar on smaller screens */
+      padding: 15px; /* Reduce padding */
   }
+
+  .center {
+      padding: 15px; /* Reduce padding */
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+      padding: 10px; /* Reduce navbar padding on smaller devices */
+  }
+
+  .nav_element p {
+      font-size: 20px; /* Slightly smaller font for mobile */
+  }
+
+  .list-item {
+      padding: 10px; /* Reduce padding in list items for smaller screens */
+  }
+
+  .table th, .table td {
+      padding: 10px; /* Reduce padding in table cells */
+  }
+}
+
+@media (max-width: 480px) {
+  .nav_element {
+      flex-direction: column; /* Stack navbar elements on very small screens */
+      align-items: flex-start; /* Align items to the left */
+  }
+
+  .nav_element p {
+      font-size: 18px; /* Further reduce font size */
+  }
+
+  .sidebar {
+      padding: 10px; /* Further reduce sidebar padding */
+  }
+
+  .center {
+      padding: 10px; /* Further reduce center padding */
+  }
+}

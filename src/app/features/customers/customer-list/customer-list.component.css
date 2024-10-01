@@ -1,0 +1,89 @@
+.customer-list-container {
+    width: 95%;
+    margin-bottom: 20px auto;
+    margin-left: 20px auto;
+    margin-right: 20px auto;
+    padding: 20px;
+    background-color: #ffffff; /* White background for contrast */
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow for depth */
+  }
+  
+  .customer-list-container h3 {
+    text-align: center;
+    color: black; /* Darker color for better readability */
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .customer-list-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .customer-list-table th,
+  .customer-list-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0; /* Light border for a cleaner look */
+  }
+  
+  .customer-list-table th {
+    background: #56dcee; /* Gradient for header */
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .customer-list-table tbody tr {
+    transition: background-color 0.2s, transform 0.2s;
+    cursor: pointer;
+  }
+  
+  .customer-list-table tbody tr:hover {
+    background-color: #f2f9ff; /* Light blue background on hover */
+    transform: scale(1.02); /* Slight scale effect on hover */
+  }
+  
+  .paid-amount {
+    font-weight: bold;
+    color: #28a745; /* Green for paid amounts */
+  }
+  
+  .bill-status {
+    font-weight: bold;
+    color: #dc3545; /* Red for unpaid or critical status */
+  }
+  
+  .open-btn {
+    padding: 8px 16px;
+    background-color: #28a745; /* Green button for positive action */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Transition for hover effect */
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .open-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+  }
+  
+  @media (max-width: 768px) {
+    .customer-list-table th,
+    .customer-list-table td {
+        padding: 10px; /* Adjust padding for smaller screens */
+        font-size: 14px; /* Adjust font size for better readability */
+    }
+    
+    .open-btn {
+        padding: 6px 12px; /* Smaller padding for buttons on mobile */
+        font-size: 12px; /* Smaller font size for buttons on mobile */
+    }
+  }

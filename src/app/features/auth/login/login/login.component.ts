@@ -58,37 +58,33 @@ export class LoginComponent implements OnInit {
   }
 
   sendOTP() {
-    this.otpSent = true;
-    this.loginForm
-      .get('otp')
-      ?.setValidators([Validators.required, Validators.pattern(/^\d{6}$/)]); // Apply validation to OTP field
-    this.loginForm.get('otp')?.updateValueAndValidity(); // Update form control
-    // const email = this.loginForm.get('email')?.value;
-    // this.authService.sendOTP(email).subscribe({
-    //   next: () => {
-    //     this.otpSent = true;
-    //     this.loginForm.get('otp')?.setValidators(Validators.required);
-    //     this.loginForm.get('otp')?.updateValueAndValidity();
-    //   },
-    //   error: (error) => {
-    //     console.error('Error sending OTP', error);
-    //     // Handle error (e.g., show error message to user)
-    //   }
-    // });
+    const email = this.loginForm.get('email')?.value;
+    this.authService.sendOTP(email).subscribe({
+      next: () => {
+        this.otpSent = true;
+        this.loginForm
+          .get('otp')
+          ?.setValidators([Validators.required, Validators.pattern(/^\d{6}$/)]); // Apply validation to OTP field
+        this.loginForm.get('otp')?.updateValueAndValidity(); // Update form control
+      },
+      error: (error) => {
+        console.error('Error sending OTP', error);
+        // Handle error (e.g., show error message to user)
+      },
+    });
   }
 
   verifyOTP() {
-    this.router.navigate(['/dashboard']);
-    // const email = this.loginForm.get('email')?.value;
-    // const otp = this.loginForm.get('otp')?.value;
-    // this.authService.verifyOTP(email, otp).subscribe({
-    //   next: () => {
-    //     this.router.navigate(['/dashboard']);
-    //   },
-    //   error: (error) => {
-    //     console.error('Error verifying OTP', error);
-    //     // Handle error (e.g., show error message to user)
-    //   }
-    // });
+    const email = this.loginForm.get('email')?.value;
+    const otp = this.loginForm.get('otp')?.value;
+    this.authService.verifyOTP(email, otp).subscribe({
+      next: () => {
+        this.router.navigate(['/dashboard']);
+      },
+      error: (error) => {
+        console.error('Error verifying OTP', error);
+        // Handle error (e.g., show error message to user)
+      }
+    });
   }
 }
